@@ -1,5 +1,5 @@
 # base image
-FROM pelias/baseimage
+FROM pelias/baseimage:nodejs10nightly
 RUN useradd -ms /bin/bash pelias
 USER pelias
 
