@@ -13,7 +13,12 @@ function service( esclient, cmd, cb ){
 
     // log total ms elasticsearch reported the query took to execute
     if( data && data.took ){
-      logger.verbose( 'time elasticsearch reported:', data.took / 1000 );
+      const seconds = data.took / 1000;
+      logger.verbose( 'time elasticsearch reported:', seconds );
+
+      if (seconds > 3) {
+        logger.warn(`elasticsearch query took ${seconds} seconds! ${JSON.stringify(cmd)}`);
+      }
     }
 
     // handle elasticsearch errors
