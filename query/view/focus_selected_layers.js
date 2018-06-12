@@ -28,7 +28,8 @@ module.exports = function( subview ){
       view.function_score.filter = {
         'or': [
           { 'term': { 'layer': 'venue' } },
-          { 'term': { 'layer': 'address' } }
+          { 'term': { 'layer': 'address' } },
+          { 'term': { 'layer': 'fare' } }
         ]
       };
     }

@@ -58,6 +58,11 @@ module.exports = {
                 'term': {
                   'layer': 'address'
                 }
+              },
+              {
+                'term': {
+                  'layer': 'fare'
+                }
               }
             ]
           }
